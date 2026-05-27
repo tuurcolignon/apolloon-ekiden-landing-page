@@ -9,7 +9,6 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Apolloon Ekiden 2026 | De Ultieme Aflossingsmarathon',
   description: 'De ultieme aflossingsmarathon voor studenten in Leuven. Verzamel je team van 6 en breek het record. September 2026.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
