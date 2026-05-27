@@ -4,8 +4,8 @@ import { Instagram, Facebook, Mail } from "lucide-react";
 import Image from "next/image";
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com/apolloon", label: "Instagram" },
-  { icon: Facebook, href: "https://facebook.com/apolloon", label: "Facebook" },
+  { icon: Instagram, href: "https://instagram.com/apolloon_leuven", label: "Instagram" },
+  { icon: Facebook, href: "https://facebook.com/ApolloonLeuven", label: "Facebook" },
   { icon: Mail, href: "mailto:sport@apolloon.org", label: "Email" },
 ];
 
