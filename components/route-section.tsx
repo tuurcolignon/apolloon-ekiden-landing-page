@@ -30,12 +30,12 @@ export function RouteSection() {
               }}
             />
 
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
+            {/* Dark Overlay - lighter to show more of the map */}
+            <div className="absolute inset-0 bg-background/40" />
 
-            {/* Gradient Overlays for depth */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background/80" />
+            {/* Gradient Overlays for depth - reduced opacity */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/40" />
 
             {/* Subtle animated glow effects */}
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse" />
@@ -44,44 +44,44 @@ export function RouteSection() {
             {/* Centered Content Box */}
             <div className="absolute inset-0 flex items-center justify-center p-4">
               <div className="relative">
-                {/* Glow effect behind box */}
-                <div className="absolute -inset-4 bg-accent/20 rounded-3xl blur-2xl" />
+                {/* Glow effect behind box - smaller */}
+                <div className="absolute -inset-2 bg-accent/15 rounded-2xl blur-xl" />
 
-                {/* Main Content Box */}
-                <div className="relative bg-background/90 backdrop-blur-md border border-accent/40 rounded-2xl p-8 md:p-12 lg:p-16 max-w-2xl text-center shadow-2xl">
-                  {/* Combined Icon */}
-                  <div className="flex items-center justify-center mb-6">
+                {/* Main Content Box - smaller and more compact */}
+                <div className="relative bg-background/80 backdrop-blur-sm border border-accent/40 rounded-xl p-6 md:p-8 lg:p-10 max-w-md text-center shadow-2xl">
+                  {/* Combined Icon - smaller */}
+                  <div className="flex items-center justify-center mb-4">
                     <div className="relative">
-                      <div className="absolute -inset-3 bg-accent/20 rounded-full blur-lg" />
-                      <div className="relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-background border-2 border-accent/50 rounded-full">
+                      <div className="absolute -inset-2 bg-accent/20 rounded-full blur-md" />
+                      <div className="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-background border-2 border-accent/50 rounded-full">
                         <div className="relative">
-                          <MapPin className="w-8 h-8 md:w-10 md:h-10 text-accent" />
-                          <Lock className="absolute -bottom-1 -right-1 w-4 h-4 md:w-5 md:h-5 text-foreground bg-background rounded-full p-0.5" />
+                          <MapPin className="w-6 h-6 md:w-7 md:h-7 text-accent" />
+                          <Lock className="absolute -bottom-1 -right-1 w-3 h-3 md:w-4 md:h-4 text-foreground bg-background rounded-full p-0.5" />
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Main Heading */}
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 tracking-wide">
+                  {/* Main Heading - smaller */}
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-1 tracking-wide">
                     ROUTE WORDT
                   </h3>
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-6 tracking-wide">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-accent mb-4 tracking-wide">
                     BINNENKORT ONTHULD
                   </h3>
 
                   {/* Decorative line */}
-                  <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6" />
+                  <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-4" />
 
-                  {/* Subtext */}
-                  <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed max-w-lg mx-auto">
+                  {/* Subtext - more compact */}
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed max-w-sm mx-auto">
                     De specifieke 5km en 10km loops zijn nog in ontwikkeling en
                     worden gepubliceerd dichter bij het evenement in september
                     2026.
                   </p>
 
                   {/* Bottom accent dots */}
-                  <div className="flex items-center justify-center gap-2 mt-8">
+                  <div className="flex items-center justify-center gap-2 mt-4">
                     <span className="w-2 h-2 rounded-full bg-accent/50" />
                     <span className="w-2 h-2 rounded-full bg-accent" />
                     <span className="w-2 h-2 rounded-full bg-accent/50" />
