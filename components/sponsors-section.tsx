@@ -3,21 +3,40 @@
 import Image from "next/image";
 import { CONTACT_EMAIL, APOLLOON_URL } from "@/lib/event";
 
-const partners = [
+type Partner = {
+  name: string;
+  caption: string;
+  logo: string;
+  href?: string;
+  /** White logos need a dark backing to stay visible on the light card. */
+  darkLogoBg?: boolean;
+};
+
+const partners: Partner[] = [
   {
-    name: "Apolloon — Sportkot Leuven",
-    logo: "/images/apolloon-logo.png",
+    name: "Apolloon",
+    caption: "Sportkot Leuven · apolloon.org",
+    logo: "/images/apolloon-circle-white.png",
     href: APOLLOON_URL,
+    darkLogoBg: true,
   },
   {
-    name: "WayPoint Leuven",
+    name: "Ekiden Leuven",
+    caption: "Sportkot Leuven",
+    logo: "/images/ekiden-logo.png",
+    href: "#hero",
+  },
+  {
+    name: "WayPoint",
+    caption: "Waypoint Leuven",
     logo: "/images/waypoint-logo.png",
-    href: "#",
+    href: "https://www.waypointleuven.be",
   },
   {
-    name: "bau NV — Contracting, bouwprojecten, Design & Build",
+    name: "bau NV",
+    caption: "Contracting · Bouwprojecten · Design & Build",
     logo: "/images/bau-logo.png",
-    href: "#",
+    href: "https://baunv.be",
   },
 ];
 
@@ -39,25 +58,40 @@ export function SponsorsSection() {
         </div>
 
         {/* Partner grid */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {partners.map((partner) => (
-            <a
-              key={partner.name}
-              href={partner.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={partner.name}
-              className="group flex aspect-[3/2] items-center justify-center rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5"
-            >
-              <Image
-                src={partner.logo || "/placeholder.svg"}
-                alt={`${partner.name} logo`}
-                width={220}
-                height={120}
-                className="max-h-20 w-auto object-contain opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
-              />
-            </a>
-          ))}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {partners.map((partner) => {
+            const isExternal = partner.href?.startsWith("http");
+            return (
+              <a
+                key={partner.name}
+                href={partner.href ?? "#"}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                aria-label={partner.name}
+                className="group flex flex-col items-center rounded-2xl border border-border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5"
+              >
+                <div
+                  className={`flex h-24 w-full items-center justify-center rounded-xl p-4 ${
+                    partner.darkLogoBg ? "bg-navy" : "bg-secondary/60"
+                  }`}
+                >
+                  <Image
+                    src={partner.logo || "/placeholder.svg"}
+                    alt={`${partner.name} logo`}
+                    width={220}
+                    height={120}
+                    className="max-h-16 w-auto object-contain"
+                  />
+                </div>
+                <h3 className="mt-4 text-base font-bold text-foreground">
+                  {partner.name}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {partner.caption}
+                </p>
+              </a>
+            );
+          })}
         </div>
 
         {/* Become a partner */}
