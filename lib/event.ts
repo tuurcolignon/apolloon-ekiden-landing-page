@@ -1,5 +1,5 @@
 // Centralised event details so they stay consistent across the site.
-export const REGISTRATION_URL = "https://www.payit.be"
+export const REGISTRATION_URL = "https://app.payit.be/ekiden-leuven-2026"
 export const CONTACT_EMAIL = "ekiden@apolloon.org"
 export const APOLLOON_URL = "https://apolloon.org"
 
