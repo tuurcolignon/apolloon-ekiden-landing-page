@@ -1,100 +1,119 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import { Countdown } from "@/components/countdown";
+import {
+  REGISTRATION_URL,
+  EVENT_DATE_LABEL,
+  EVENT_LOCATION,
+} from "@/lib/event";
 
 export function HeroSection() {
-  const scrollToTickets = () => {
-    const element = document.querySelector("#concept");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollToConcept = () => {
+    document.querySelector("#concept")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Background with gradient and texture */}
+      {/* Dark energetic background */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-navy-dark" />
-      
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+
+      {/* Animated glow blobs */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute left-1/4 top-1/4 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan/30 blur-3xl animate-float" />
+        <div
+          className="absolute bottom-1/4 right-1/4 h-80 w-80 translate-x-1/2 rounded-full bg-cyan-bright/20 blur-3xl animate-float"
+          style={{ animationDelay: "1s" }}
+        />
       </div>
 
-      {/* Running track lines pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="h-full w-full" style={{
-          backgroundImage: `repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 80px,
-            rgba(255,255,255,0.1) 80px,
-            rgba(255,255,255,0.1) 82px
-          )`
-        }} />
+      {/* Running track lines */}
+      <div className="absolute inset-0 opacity-[0.06]">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage: `repeating-linear-gradient(115deg, transparent, transparent 70px, rgba(255,255,255,0.6) 70px, rgba(255,255,255,0.6) 72px)`,
+          }}
+        />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 py-28 text-center sm:px-6 lg:px-8">
         {/* Badges */}
-        <div className="mb-8 flex flex-wrap items-center justify-center gap-3">
-          <span className="inline-flex items-center gap-2 rounded-full bg-secondary/80 px-4 py-2 text-sm font-medium text-foreground backdrop-blur-sm">
-            <Calendar size={16} className="text-primary" />
-            September 2026
+        <div className="mb-7 flex flex-wrap items-center justify-center gap-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+            <Calendar size={16} className="text-cyan-bright" />
+            {EVENT_DATE_LABEL}
           </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-secondary/80 px-4 py-2 text-sm font-medium text-foreground backdrop-blur-sm">
-            <MapPin size={16} className="text-primary" />
-            Leuven
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+            <MapPin size={16} className="text-cyan-bright" />
+            {EVENT_LOCATION}
           </span>
         </div>
 
-        {/* Main headline */}
-        <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl text-balance">
-          <span className="block">Apolloon</span>
-          <span className="block bg-gradient-to-r from-primary via-cyan to-primary bg-clip-text text-transparent">
-            Ekiden 2026
+        {/* Headline */}
+        <h1 className="mb-6 text-balance text-5xl font-extrabold uppercase italic tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+          <span className="block">Ekiden Leuven</span>
+          <span className="mt-1 block bg-gradient-to-r from-cyan-bright via-white to-cyan-bright bg-clip-text text-transparent">
+            2026
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl md:text-2xl leading-relaxed text-pretty">
-          De ultieme aflossingsmarathon voor studenten in Leuven. Verzamel je team van 6 en breek het record.
+        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-white/70 sm:text-xl md:text-2xl">
+          De ultieme aflossingsmarathon in Leuven. Verzamel je team van 6 lopers
+          en leg samen de 42,195&nbsp;km af.
         </p>
 
-        {/* CTA Button */}
-        <div className="flex flex-col items-center gap-4">
+        {/* CTAs */}
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
-            onClick={scrollToTickets}
+            asChild
             size="lg"
-            className="animate-pulse-glow bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-bold px-10 py-6 h-auto rounded-full transition-transform hover:scale-105"
+            className="animate-pulse-glow h-auto w-full rounded-full bg-cyan-bright px-10 py-6 text-lg font-bold text-navy-dark transition-transform hover:scale-105 hover:bg-cyan-bright/90 sm:w-auto"
           >
-            Koop Tickets
+            <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
+              Schrijf je in
+            </a>
           </Button>
-          <p className="text-sm text-muted-foreground">
-            Beperkte plaatsen beschikbaar
-          </p>
+          <Button
+            onClick={scrollToConcept}
+            size="lg"
+            variant="outline"
+            className="h-auto w-full rounded-full border-white/25 bg-transparent px-8 py-6 text-lg font-semibold text-white hover:bg-white/10 hover:text-white sm:w-auto"
+          >
+            Ontdek het concept
+            <ArrowRight size={18} />
+          </Button>
         </div>
 
-        {/* Stats preview */}
-        <div className="mt-16 grid grid-cols-3 gap-4 sm:gap-8">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary sm:text-4xl">42.195</div>
-            <div className="text-sm text-muted-foreground">Kilometer</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary sm:text-4xl">6</div>
-            <div className="text-sm text-muted-foreground">Lopers</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary sm:text-4xl">1</div>
-            <div className="text-sm text-muted-foreground">Team</div>
-          </div>
+        {/* Countdown */}
+        <div className="mt-14">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+            Het startschot valt over
+          </p>
+          <Countdown />
+        </div>
+
+        {/* Stats */}
+        <div className="mx-auto mt-14 grid max-w-lg grid-cols-3 gap-4 sm:gap-8">
+          {[
+            { value: "42,195", label: "Kilometer" },
+            { value: "6", label: "Lopers" },
+            { value: "1", label: "Team" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-3xl font-extrabold text-cyan-bright sm:text-4xl">
+                {stat.value}
+              </div>
+              <div className="text-sm text-white/60">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
-
     </section>
   );
 }

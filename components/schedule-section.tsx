@@ -1,73 +1,73 @@
 "use client";
 
-import { Clock, Users, Zap, Award, PartyPopper } from "lucide-react";
+import { Clock, Users, Zap, MoreHorizontal } from "lucide-react";
 
 const scheduleItems = [
   {
     time: "11:00",
-    title: "Aanmeldingen & Opwarming",
-    description: "Check-in bij de startlocatie en collectieve opwarming met alle deelnemers.",
+    title: "Aankomst & onthaal",
+    description:
+      "Check-in bij het Sportkot, ophalen van je startnummer en collectieve opwarming.",
     icon: Users,
+    confirmed: true,
   },
   {
-    time: "12:00",
+    time: "13:00",
     title: "Startschot",
-    description: "De eerste lopers van elk team vertrekken! De spanning begint.",
+    description:
+      "De eerste lopers van elk team vertrekken. De aflossingsmarathon is begonnen!",
     icon: Zap,
+    confirmed: true,
   },
   {
-    time: "16:30",
-    title: "Eerste teams finishen",
-    description: "De snelste teams passeren de eindstreep na een epische race.",
-    icon: Award,
-  },
-  {
-    time: "18:00",
-    title: "Prijsuitreiking & Afterparty",
-    description: "Viering van alle prestaties met prijzen en een welverdiend feest!",
-    icon: PartyPopper,
+    time: "Later",
+    title: "Finish, prijsuitreiking & afterparty",
+    description:
+      "De volledige tijdslijn met finish, huldiging en afterparty wordt binnenkort bevestigd.",
+    icon: MoreHorizontal,
+    confirmed: false,
   },
 ];
 
 export function ScheduleSection() {
   return (
-    <section id="schema" className="py-20 sm:py-28 bg-navy-dark">
+    <section id="schema" className="bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <span className="inline-block mb-4 text-primary font-semibold tracking-wider uppercase text-sm">
+        {/* Header */}
+        <div className="mb-14 text-center">
+          <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
             Timing
           </span>
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl text-balance">
+          <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
             Programma
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-            Een complete dag vol sport, spanning en plezier
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+            Een voorlopige planning — de definitieve tijdslijn volgt.
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent hidden sm:block" />
+          <div className="absolute left-8 top-0 bottom-0 hidden w-0.5 bg-gradient-to-b from-accent via-accent/40 to-transparent sm:block" />
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {scheduleItems.map((item, index) => (
-              <div
-                key={index}
-                className="relative flex gap-6 sm:gap-8 group"
-              >
-                {/* Time circle */}
+              <div key={index} className="group relative flex gap-5 sm:gap-8">
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary border-2 border-primary/30 group-hover:border-primary transition-colors duration-300">
-                    <item.icon size={24} className="text-primary" />
+                  <div
+                    className={`flex h-16 w-16 items-center justify-center rounded-full border-2 bg-card transition-colors duration-300 ${
+                      item.confirmed
+                        ? "border-accent/40 text-accent group-hover:border-accent"
+                        : "border-dashed border-border text-muted-foreground"
+                    }`}
+                  >
+                    <item.icon size={24} />
                   </div>
                 </div>
 
-                {/* Content card */}
-                <div className="flex-1 rounded-xl bg-secondary/30 p-5 sm:p-6 group-hover:bg-secondary/50 transition-colors duration-300">
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <span className="inline-flex items-center gap-1.5 text-primary font-bold text-lg">
+                <div className="flex-1 rounded-xl border border-border bg-card p-5 shadow-sm transition-colors duration-300 group-hover:border-accent/30 sm:p-6">
+                  <div className="mb-2 flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center gap-1.5 text-lg font-bold text-accent">
                       <Clock size={16} />
                       {item.time}
                     </span>
@@ -75,7 +75,7 @@ export function ScheduleSection() {
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="leading-relaxed text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
@@ -84,10 +84,10 @@ export function ScheduleSection() {
           </div>
         </div>
 
-        {/* Note */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground bg-secondary/20 inline-block px-4 py-2 rounded-full">
-            * Tijden zijn onder voorbehoud en kunnen wijzigen
+        <div className="mt-10 text-center">
+          <p className="inline-block rounded-full bg-secondary px-4 py-2 text-sm text-muted-foreground">
+            * We zijn volop bezig met de voorbereiding. Tijden zijn voorlopig en
+            kunnen nog wijzigen.
           </p>
         </div>
       </div>

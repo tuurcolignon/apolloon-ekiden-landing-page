@@ -1,88 +1,101 @@
 "use client";
 
-import { Users, Map, Trophy } from "lucide-react";
+import { Users, Repeat, Trophy } from "lucide-react";
 
 const concepts = [
   {
     icon: Users,
     title: "Teamwork",
-    description: "6 lopers per team. Elk teamlid loopt een etappe en geeft de sjerp door aan de volgende loper.",
+    description:
+      "Een team van 6 lopers legt samen de marathonafstand van 42,195 km af. Sterker samen dan alleen.",
   },
   {
-    icon: Map,
-    title: "Afstanden",
-    description: "5km, 10km, 5km, 10km, 5km, 7.195km. Samen vormen jullie de volledige marathon.",
+    icon: Repeat,
+    title: "Estafette",
+    description:
+      "Elke loper neemt één deel van het parcours voor zijn rekening en geeft daarna symbolisch het stokje door aan een ploeggenoot.",
   },
   {
     icon: Trophy,
     title: "Competitie",
-    description: "Strijd tegen andere kringen en teams. Wie zet de snelste tijd neer en wint de trofee?",
+    description:
+      "Strijd tegen andere teams en kringen. Ideaal voor persoonlijke records op de 5 en 10 km!",
   },
+];
+
+const legs = [
+  { runner: "Loper 1", distance: "5 km" },
+  { runner: "Loper 2", distance: "10 km" },
+  { runner: "Loper 3", distance: "5 km" },
+  { runner: "Loper 4", distance: "10 km" },
+  { runner: "Loper 5", distance: "5 km" },
+  { runner: "Loper 6", distance: "7,195 km" },
 ];
 
 export function ConceptSection() {
   return (
-    <section id="concept" className="py-20 sm:py-28 bg-navy">
+    <section id="concept" className="bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <span className="inline-block mb-4 text-primary font-semibold tracking-wider uppercase text-sm">
+        {/* Header */}
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
             Het Concept
           </span>
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl text-balance">
-            Wat is de Ekiden?
+          <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
+            Wat is een Ekiden?
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
-            Een Japanse aflossingsmarathon waarbij teams van 6 lopers samen de marathonafstand afleggen.
+          <p className="mx-auto mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
+            Een Ekiden is een estafetteloop waarbij een team van 6 lopers samen
+            de marathonafstand van 42,195 km aflegt. Elke loper neemt één deel
+            van het parcours voor zijn rekening en geeft daarna symbolisch het
+            stokje door aan een ploeggenoot.
           </p>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid gap-8 md:grid-cols-3">
-          {concepts.map((concept, index) => (
+        {/* Cards */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {concepts.map((concept) => (
             <div
-              key={index}
-              className="group relative rounded-2xl bg-secondary/50 p-8 transition-all duration-300 hover:bg-secondary/80 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
+              key={concept.title}
+              className="group rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5"
             >
-              {/* Icon */}
-              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground">
                 <concept.icon size={28} />
               </div>
-
-              {/* Content */}
               <h3 className="mb-3 text-xl font-bold text-foreground">
                 {concept.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="leading-relaxed text-muted-foreground">
                 {concept.description}
               </p>
-
-              {/* Decorative corner */}
-              <div className="absolute top-0 right-0 h-16 w-16 overflow-hidden rounded-tr-2xl">
-                <div className="absolute -right-8 -top-8 h-16 w-16 rotate-45 bg-gradient-to-br from-primary/20 to-transparent" />
-              </div>
             </div>
           ))}
         </div>
 
         {/* Distance breakdown */}
-        <div className="mt-16 rounded-2xl bg-secondary/30 p-6 sm:p-8">
-          <h3 className="text-center text-lg font-semibold text-foreground mb-6">
-            Etappe Verdeling
+        <div className="mt-14 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+          <h3 className="mb-6 text-center text-lg font-semibold text-foreground">
+            De verdeling van de etappes
           </h3>
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {["5km", "10km", "5km", "10km", "5km", "7.195km"].map((distance, i) => (
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {legs.map((leg, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center rounded-lg bg-navy-dark/50 px-4 py-3 sm:px-6 sm:py-4"
+                className="flex flex-col items-center rounded-xl bg-secondary px-4 py-4 text-center"
               >
-                <span className="text-xs text-muted-foreground mb-1">Etappe {i + 1}</span>
-                <span className="text-lg sm:text-xl font-bold text-primary">{distance}</span>
+                <span className="mb-1 text-xs font-medium text-muted-foreground">
+                  {leg.runner}
+                </span>
+                <span className="text-lg font-bold text-accent sm:text-xl">
+                  {leg.distance}
+                </span>
               </div>
             ))}
           </div>
-          <p className="text-center text-muted-foreground mt-4 text-sm">
-            Totaal: 42.195 km = Volledige marathonafstand
+          <p className="mt-5 text-center text-sm text-muted-foreground">
+            Totaal: <span className="font-semibold text-foreground">42,195 km</span> — de
+            volledige marathonafstand. Ideaal voor persoonlijke records op de 5
+            en 10 km!
           </p>
         </div>
       </div>
