@@ -51,15 +51,13 @@ export function Navbar() {
             className="flex items-center gap-3 transition-opacity hover:opacity-80"
             aria-label="Naar boven"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-navy md:h-10 md:w-10">
-              <Image
-                src="/images/apolloon-circle-white.png"
-                alt="Apolloon Sportkot Leuven logo"
-                width={40}
-                height={40}
-                className="h-7 w-7 object-contain md:h-8 md:w-8"
-              />
-            </span>
+            <Image
+              src="/images/apolloon-circle-white.png"
+              alt="Apolloon Sportkot Leuven logo"
+              width={40}
+              height={40}
+              className="h-9 w-9 object-contain md:h-10 md:w-10"
+            />
             <span
               className={`text-lg font-extrabold uppercase italic tracking-tight md:text-xl ${
                 solid ? "text-foreground" : "text-white"
