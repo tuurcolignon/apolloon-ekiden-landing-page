@@ -67,7 +67,7 @@ export function SponsorsSection() {
                 aria-label={partner.name}
                 className="group flex flex-col items-center rounded-2xl border border-border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5"
               >
-                <div className="flex h-24 w-full items-center justify-center rounded-xl bg-secondary/60 p-4">
+                <div className="flex h-24 w-full items-center justify-center p-4">
                   <Image
                     src={partner.logo || "/placeholder.svg"}
                     alt={`${partner.name} logo`}
