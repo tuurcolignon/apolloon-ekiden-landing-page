@@ -14,7 +14,7 @@ const partners: Partner[] = [
   {
     name: "Apolloon",
     caption: "Sportkot Leuven",
-    logo: "/images/apolloon-shield-white.png",
+    logo: "/images/apolloon-circle-white.png",
     href: APOLLOON_URL,
   },
   {
