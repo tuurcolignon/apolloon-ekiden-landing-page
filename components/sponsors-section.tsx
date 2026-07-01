@@ -14,7 +14,7 @@ const partners: Partner[] = [
   {
     name: "Apolloon",
     caption: "Sportkot Leuven",
-    logo: "/images/apolloon-circle-white.png",
+    logo: "/images/apolloon-shield-white.png",
     href: APOLLOON_URL,
   },
   {
@@ -73,6 +73,7 @@ export function SponsorsSection() {
                     alt={`${partner.name} logo`}
                     width={220}
                     height={120}
+                    unoptimized
                     className="max-h-16 w-auto object-contain"
                   />
                 </div>
