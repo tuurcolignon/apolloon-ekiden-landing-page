@@ -10,6 +10,7 @@ const navLinks = [
   { href: "#concept", label: "Concept" },
   { href: "#voor-wie", label: "Voor Wie" },
   { href: "#schema", label: "Programma" },
+  { href: "#pricing", label: "Prijzen" },
   { href: "#parcours", label: "Parcours" },
   { href: "#faq", label: "FAQ" },
   { href: "#sponsors", label: "Partners" },

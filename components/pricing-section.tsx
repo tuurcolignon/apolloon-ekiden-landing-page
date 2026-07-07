@@ -33,12 +33,6 @@ export function PricingSection() {
         </div>
 
         <div className="mx-auto mt-8 max-w-2xl text-center">
-          <p className="text-sm text-muted-foreground">
-            Optioneel: donatie voor onderzoek tegen kanker (€1) tijdens het
-            afrekenen. Voor wijzigingen na inschrijving gebruik de link op de
-            registratiepagina.
-          </p>
-
           <div className="mt-6">
             <Button asChild className="bg-accent text-accent-foreground px-6 py-3">
               <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
