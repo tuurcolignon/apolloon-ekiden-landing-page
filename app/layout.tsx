@@ -78,11 +78,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/images/ekiden-logo.png', media: '(prefers-color-scheme: light)' },
+      { url: '/images/ekiden-logo.png', media: '(prefers-color-scheme: dark)' },
+      { url: '/images/ekiden-logo.png', type: 'image/png' },
     ],
-    apple: '/apple-icon.png',
+    apple: '/images/ekiden-logo.png',
   },
 }
 
