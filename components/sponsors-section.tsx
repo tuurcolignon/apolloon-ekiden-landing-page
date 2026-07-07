@@ -8,8 +8,6 @@ type Partner = {
   caption: string;
   logo: string;
   href?: string;
-  /** Transparent white logos need a subtle dark backing to stay visible. */
-  darkLogoBg?: boolean;
 };
 
 const partners: Partner[] = [
@@ -18,7 +16,6 @@ const partners: Partner[] = [
     caption: "Sportkot Leuven",
     logo: "/images/apolloon-shield-white.png",
     href: APOLLOON_URL,
-    darkLogoBg: true,
   },
   {
     name: "Ekiden Leuven",
@@ -71,9 +68,7 @@ export function SponsorsSection() {
                 className="group flex flex-col items-center rounded-2xl border border-border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5"
               >
                 <div
-                  className={`flex h-24 w-full items-center justify-center p-4 ${
-                    partner.darkLogoBg ? "rounded-xl bg-navy/85" : ""
-                  }`}
+                  className="flex h-24 w-full items-center justify-center p-4"
                 >
                   <Image
                     src={partner.logo || "/placeholder.svg"}
