@@ -52,8 +52,8 @@ export function Navbar() {
             aria-label="Naar boven"
           >
             <Image
-              src="/images/ekiden-logo.png"
-              alt="Ekiden Leuven logo"
+              src="/images/apolloon-circle-white.png"
+              alt="Apolloon Sportkot Leuven logo"
               width={40}
               height={40}
               className="h-9 w-9 rounded-full object-cover md:h-10 md:w-10"

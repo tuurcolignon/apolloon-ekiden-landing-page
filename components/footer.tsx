@@ -18,8 +18,8 @@ export function Footer() {
           {/* Logo + title */}
           <div className="flex items-center gap-3">
             <Image
-              src="/images/ekiden-logo.png"
-              alt="Ekiden Leuven logo"
+              src="/images/apolloon-circle-white.png"
+              alt="Apolloon Sportkot Leuven logo"
               width={48}
               height={48}
               className="h-11 w-11 object-contain"
