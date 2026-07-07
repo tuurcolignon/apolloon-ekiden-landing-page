@@ -7,6 +7,7 @@ import { RouteSection } from "@/components/route-section";
 import { FAQSection } from "@/components/faq-section";
 import { SponsorsSection } from "@/components/sponsors-section";
 import { Footer } from "@/components/footer";
+import { SEOSection } from '@/components/seo-section';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <RouteSection />
       <FAQSection />
       <SponsorsSection />
+      <SEOSection />
       <Footer />
     </main>
   );
