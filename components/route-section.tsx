@@ -22,11 +22,11 @@ export function RouteSection() {
         <div className="relative rounded-2xl overflow-hidden border border-accent/30 shadow-2xl shadow-accent/10">
           {/* Blurred Map Background */}
           <div className="relative h-[400px] md:h-[500px] lg:h-[600px]">
-            {/* Background Image */}
+            {/* Background Image (AVIF for better compression) */}
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: "url('/images/leuven-map-blurred.png')",
+                backgroundImage: "url('/images/leuven-map.avif')",
               }}
             />
 
