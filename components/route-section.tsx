@@ -26,7 +26,7 @@ export function RouteSection() {
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: "url('/images/leuven-map-blurred.jpg')",
+                backgroundImage: "url('/images/leuven-map-blurred.png')",
               }}
             />
 

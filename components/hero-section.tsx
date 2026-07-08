@@ -56,7 +56,7 @@ export function HeroSection() {
 
         {/* Headline */}
         <h1 className="mb-6 text-balance text-5xl font-extrabold uppercase italic tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
-          <span className="block">Ekiden Leuven</span>
+          <span className="block">Apolloon Ekiden Leuven</span>
           <span className="mt-1 block bg-gradient-to-r from-cyan-bright via-white to-cyan-bright bg-clip-text text-transparent">
             2026
           </span>

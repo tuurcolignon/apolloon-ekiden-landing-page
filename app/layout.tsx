@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Apolloon Ekiden 2026',
+    title: 'Apolloon Ekiden Leuven 2026',
     description:
       'Apolloon Ekiden Leuven 2026 — De aflossingsmarathon voor studenten in Leuven. 26 september 2026.',
     images: [`${SITE_URL}/images/ekiden-logo.png`],
