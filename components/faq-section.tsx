@@ -10,52 +10,44 @@ import { CONTACT_EMAIL } from "@/lib/event";
 
 const faqItems = [
   {
-    question: "Wat is een Ekiden?",
+    question: "Zijn de kleedkamers beschikbaar?",
     answer:
-      "Een Ekiden is een marathon in estafettevorm waarbij 6 lopers samen 42,195 km afleggen.",
+      "De kleedkamers aan de buitenzijde van Gebouw De Nayer zijn niet beschikbaar tijdens het evenement. Met een geldige sportkaart kunt u wel gebruikmaken van de kleedkamers binnen in het gebouw.",
   },
   {
-    question: "Moet ik een ervaren loper zijn?",
-    answer: "Nee. Zowel beginnende als ervaren lopers kunnen deelnemen.",
-  },
-  {
-    question: "Hoeveel personen zitten er in een team?",
-    answer: "Elk team bestaat uit 6 lopers.",
-  },
-  {
-    question: "Mag ik meerdere afstanden lopen?",
-    answer: "Nee, iedere loper loopt één voorziene afstand.",
-  },
-  {
-    question: "Kunnen we deelnemen met een gemengd team?",
-    answer: "Ja, dit kan zeker!",
-  },
-  {
-    question: "Is er catering voorzien?",
+    question: "Is er een drinkwaterpunt aanwezig?",
     answer:
-      "Op het evenement zullen foodtrucks zijn waar je kan genieten van een welverdiende en lekkere maaltijd.",
+      "Ja, er is ter plaatse een drinkwaterpunt voorzien waar deelnemers hun drinkfles kunnen bijvullen.",
   },
   {
-    question: "Kunnen supporters komen kijken?",
-    answer: "Ja, supporters zijn van harte welkom.",
-  },
-  {
-    question: "Wat gebeurt er bij slecht weer?",
-    answer:
-      "De wedstrijd gaat normaal door. Eventuele wijzigingen worden tijdig gecommuniceerd.",
-  },
-  {
-    question: "Zijn er prijzen te winnen?",
-    answer: "Ja, er zijn prijzen voorzien voor verschillende categorieën.",
+    question: "Zijn er toiletten aanwezig?",
+    answer: "Ja, er zijn toiletten ter plaatse beschikbaar voor de deelnemers.",
   },
   {
     question: "Waar kan ik parkeren?",
-    answer: "Meer informatie volgt.",
+    answer:
+      "Parkeren kan op Parking Bodart. Let op: deze parking is niet gereserveerd voor het evenement. Het gebruik van een parkeerschijf is hier verplicht.",
   },
   {
-    question: "Wanneer openen de inschrijvingen?",
-    answer: "Meer informatie volgt.",
+    question: "Mag ik alcoholische drank meenemen of nuttigen?",
+    answer:
+      "Nee. Het nuttigen van alcoholische dranken is tijdens het evenement niet toegestaan.",
   },
+  {
+    question: "Mag ik eigen glaswerk of blikjes meenemen?",
+    answer:
+      "Nee. Het gebruik van eigen glaswerk of blikjes is niet toegestaan op het evenemententerrein.",
+  },
+  {
+    question: "Is er bevoorrading voorzien?",
+    answer:
+      "Nee, er is geen bevoorrading voorzien. We vragen deelnemers bovendien om geen eigen sportgels, verpakkingen of ander afval langs het parcours achter te laten. Zo houden we het parcours netjes en beperken we de impact op het milieu.",
+  },
+  {
+    question: "Mag ik een eigen tentje meenemen?",
+    answer:
+      "Ja, deelnemers mogen een eigen tentje meebrengen. Het tentje mag enkel met gewichtjes worden vastgezet. Het gebruik van haringen, tentharingen of andere bevestigingen die in de grond worden geplaatst, is niet toegestaan.",
+  }
 ];
 
 export function FAQSection() {
@@ -71,8 +63,8 @@ export function FAQSection() {
             Praktisch &amp; Reglement
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            We zijn volop bezig met de voorbereiding — verdere info volgt
-            binnenkort.
+            Alles wat je moet weten voor een vlotte en aangename
+            evenementendag.
           </p>
         </div>
 

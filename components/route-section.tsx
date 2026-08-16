@@ -12,7 +12,7 @@ export function RouteSection() {
             Parcours / Route
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ontdek het traject door de mooiste plekjes van Leuven
+            Het parcours wordt binnenkort bevestigd en bekendgemaakt.
           </p>
         </div>
       </div>
@@ -64,10 +64,10 @@ export function RouteSection() {
 
                   {/* Main Heading - smaller */}
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-1 tracking-wide">
-                    ROUTE WORDT
+                    PARCOURS WORDT
                   </h3>
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-accent mb-4 tracking-wide">
-                    BINNENKORT ONTHULD
+                    BINNENKORT BEKENDGEMAAKT
                   </h3>
 
                   {/* Decorative line */}
@@ -75,9 +75,8 @@ export function RouteSection() {
 
                   {/* Subtext - more compact */}
                   <p className="text-muted-foreground text-xs md:text-sm leading-relaxed max-w-sm mx-auto">
-                    De specifieke 5km en 10km loops zijn nog in ontwikkeling en
-                    worden gepubliceerd dichter bij het evenement in september
-                    2026.
+                    Het parcours wordt binnenkort bevestigd en
+                    bekendgemaakt.
                   </p>
 
                   {/* Bottom accent dots */}
